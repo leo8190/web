@@ -6,7 +6,7 @@ personalizada, ya publicada en `https://web.leonardoapollonio.com/muestras/<slug
 ## Pasos
 
 1. Clonar `leo8190/web` con acceso de escritura y traer esta herramienta:
-   `git -C web fetch origin tools && git -C web show origin/tools:gen_muestras.py > gen_muestras.py`
+   `git -C web fetch origin tools && git -C web show FETCH_HEAD:gen_muestras.py > gen_muestras.py`
 2. Escribir `leads.json` (lista JSON) con un objeto por negocio (campos abajo).
 3. `python3 gen_muestras.py leads.json web envios.jsonl`
    Crea `web/muestras/<slug>/index.html` por cada negocio válido y `envios.jsonl` con el mail listo
