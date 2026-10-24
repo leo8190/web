@@ -181,6 +181,34 @@ EMAIL = {
 }
 
 
+EMAIL_FOLLOWUP = {  # para negocios a los que ya se les escribió antes sin muestra (pedido de Leo, 24/10/2026)
+    "es": dict(
+        subject="Muestra de página para {name}",
+        lines=["Hola, cómo están?", "",
+               "Hace poco les escribí por una página web para {name}. Para que se den una idea, ya les armé una muestra con {parts}:",
+               "{url}", "",
+               "Es gratis y sin compromiso. Si les gusta, la termino con sus fotos y su propio dominio; si no, no pasa nada.", "",
+               "Saludos,", "Leonardo Apollonio", "Desarrollador web", "{sig}", ADDRESS, "",
+               'Si prefieren que no les escriba más, respondan "no" y listo.']),
+    "pt": dict(
+        subject="Site de exemplo para {name}",
+        lines=["Olá, tudo bem?", "",
+               "Há pouco tempo escrevi para vocês sobre um site para {name}. Para vocês terem uma ideia, já montei um exemplo com {parts}:",
+               "{url}", "",
+               "É grátis e sem compromisso. Se gostarem, eu termino com as fotos de vocês e um domínio próprio; se não, tudo bem.", "",
+               "Abraço,", "Leonardo Apollonio", "Desenvolvedor web", "{sig}", ADDRESS, "",
+               'Se preferirem não receber mais mensagens minhas, é só responder "não".']),
+    "en": dict(
+        subject="Sample website for {name}",
+        lines=["Hi there,", "",
+               "I wrote to you recently about a website for {name}. To give you a better idea, I went ahead and built a free sample with {parts}:",
+               "{url}", "",
+               "It's free and there's no commitment. If you like it, I can finish it with your photos and your own domain; if not, no problem at all.", "",
+               "Leonardo Apollonio", "Web developer", "{sig}", ADDRESS, "",
+               "If you'd rather not hear from me again, just reply \"no\" and I won't write again."]),
+}
+
+
 def slugify(s):
     s = unicodedata.normalize("NFKD", str(s)).encode("ascii", "ignore").decode()
     s = re.sub(r"[^a-zA-Z0-9]+", "-", s.lower()).strip("-")
@@ -271,7 +299,9 @@ def contact(phone, country):
 def validate(raw, existing_slugs, seen_emails, today):
     """Devuelve (lead_normalizado, None) o (None, motivo)."""
     L = dict(raw)
-    for k in ["name", "town", "country", "email", "lang", "hook_sentence", "situation_sentence"]:
+    L["followup"] = bool(L.get("followup"))
+    need = ["name", "town", "country", "email", "lang"] + ([] if L["followup"] else ["hook_sentence", "situation_sentence"])
+    for k in need:
         if not str(L.get(k) or "").strip():
             return None, f"falta {k}"
     L["name"] = str(L["name"]).strip()
@@ -298,14 +328,14 @@ def validate(raw, existing_slugs, seen_emails, today):
         except Exception:
             return None, "rating ilegible"
     lang = L["lang"]
-    h = str(L["hook_sentence"]).strip()
+    h = str(L.get("hook_sentence") or "").strip()
     if lang in ("es", "pt"):
         h = re.sub(r"(?<![\d.])(\d)\.(\d)(?![\d.])", r"\1,\2", h)
-    if not h.endswith((".", "!", "?", '"', "”")):
+    if h and not h.endswith((".", "!", "?", '"', "”")):
         h += "."
     L["hook_sentence"] = h
-    s = str(L["situation_sentence"]).strip()
-    L["situation_sentence"] = s if s.endswith((".", "!", "?")) else s + "."
+    s = str(L.get("situation_sentence") or "").strip()
+    L["situation_sentence"] = s if (not s or s.endswith((".", "!", "?"))) else s + "."
     L["quotes"] = [q for q in (L.get("quotes") or [])
                    if isinstance(q, dict) and str(q.get("text") or "").strip() and len(str(q["text"]).split()) <= 15][:3]
     L["dishes"] = [x.strip() for x in (L.get("dishes") or L.get("services") or [])
@@ -483,10 +513,10 @@ def parts_text(L):
 
 
 def build_email(L, url):
-    e = EMAIL[L["lang"]]
+    e = (EMAIL_FOLLOWUP if L.get("followup") else EMAIL)[L["lang"]]
     subj = e["subject"].format(name=L["name"])
     vals = dict(hook=L["hook_sentence"], situation=L["situation_sentence"], url=url, parts=parts_text(L))
-    body = [ln.format(sig="web.leonardoapollonio.com", **vals) for ln in e["lines"]]
+    body = [ln.format(sig="web.leonardoapollonio.com", name=L["name"], **vals) for ln in e["lines"]]
     hb = []
     for ln in e["lines"]:
         if ln == "{url}":
@@ -494,7 +524,7 @@ def build_email(L, url):
         elif ln == "{sig}":
             hb.append(f'<a href="{SIGNATURE_URL}">web.leonardoapollonio.com</a>')
         else:
-            hb.append(esc(ln.format(sig="", **vals)))
+            hb.append(esc(ln.format(sig="", name=L["name"], **vals)))
     return subj, "\n".join(body), '<div dir="ltr">' + "<br>\n".join(hb) + "</div>"
 
 
@@ -529,7 +559,8 @@ def main():
                 f.write(build_page(L))
             subj, body, hb = build_email(L, url)
             out.write(json.dumps(dict(to=L["email"], subject=subj, body=body, htmlBody=hb, url=url, slug=L["slug"],
-                                      name=L["name"], town=L["town"], country=L["country"], lang=L["lang"]),
+                                      name=L["name"], town=L["town"], country=L["country"], lang=L["lang"],
+                                      followup=L["followup"]),
                                  ensure_ascii=False) + "\n")
     print(f"válidos: {len(ok)} · descartados: {len(bad)}")
     for L in ok:

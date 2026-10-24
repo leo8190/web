@@ -62,3 +62,11 @@ Para la página (si un dato no está en la fuente, dejalo vacío; nunca inventar
 - Descarta los países a los que nunca se les escribe: UE/EEE, Reino Unido, Suiza, Vietnam, Egipto,
   Filipinas, Sudáfrica, Marruecos, Kenia, Turquía, Japón, Corea, Singapur, Israel, Canadá, Australia,
   Nueva Zelanda e India.
+
+## Seguimiento con muestra (negocios ya contactados sin muestra)
+
+Pedido de Leo (24/10/2026): a los que ya recibieron un mail sin muestra y no respondieron, se les manda su
+muestra una vez. En cada negocio poné `"followup": true`: no hacen falta `hook_sentence` ni
+`situation_sentence`, y el mail sale con el texto de seguimiento ("Hace poco les escribí por una página
+web para..."). Mandalo como respuesta en el hilo del primer mail (Gmail `reply` con el id de ese mensaje)
+para que quede todo junto. Nunca a quien respondió, pidió baja o rebotó.
