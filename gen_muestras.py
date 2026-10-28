@@ -72,7 +72,7 @@ CC = {  # código de país para WhatsApp/teléfono cuando el número no trae "+"
 }
 TRUNK0 = {"66", "60", "855", "856", "62", "94", "977", "233", "264", "265", "260", "256", "250", "255", "55", "51", "598", "54"}
 # En EE.UU. y Puerto Rico casi nadie usa WhatsApp para negocios: botón de llamar.
-CALL_FIRST = {"usa", "puerto rico"}
+CALL_FIRST = {"usa", "puerto rico", "jamaica"}  # Jamaica: fijos y celulares comparten 876, mejor llamar
 
 
 def ckey(country):
