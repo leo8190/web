@@ -300,7 +300,10 @@ def validate(raw, existing_slugs, seen_emails, today):
     """Devuelve (lead_normalizado, None) o (None, motivo)."""
     L = dict(raw)
     L["followup"] = bool(L.get("followup"))
-    need = ["name", "town", "country", "email", "lang"] + ([] if L["followup"] else ["hook_sentence", "situation_sentence"])
+    if L["followup"]:
+        # Regla de Leo (28/10/2026): un solo contacto inicial por negocio, ningún seguimiento.
+        return None, "seguimientos desactivados (regla de Leo del 28/10/2026)"
+    need =["name", "town", "country", "email", "lang"] + ([] if L["followup"] else ["hook_sentence", "situation_sentence"])
     for k in need:
         if not str(L.get(k) or "").strip():
             return None, f"falta {k}"
