@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="46 84 716 360" role="img" aria-label="SGA">
+  <g fill="none" stroke="#1A5446" stroke-width="4.5">
+    <ellipse cx="403" cy="264" rx="348" ry="168"/>
+    <ellipse cx="403" cy="264" rx="248" ry="168"/>
+    <ellipse cx="398" cy="264" rx="86" ry="174"/>
+    <ellipse cx="398" cy="119" rx="150" ry="21"/>
+    <ellipse cx="402" cy="411" rx="136" ry="21"/>
+  </g>
+  <text x="398" y="338" text-anchor="middle" font-family="'Times New Roman', Times, 'Liberation Serif', serif" font-weight="700" font-size="164" fill="#1A5446" letter-spacing="-6">SGA</text>
+  <circle cx="530" cy="226" r="11.5" fill="#fff" stroke="#1A5446" stroke-width="3"/>
+  <text x="530" y="232" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="15" fill="#1A5446">R</text>
+</svg>
