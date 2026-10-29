@@ -102,6 +102,7 @@ MOBILE = {  # código -> (regla de celular, largos válidos del número nacional
     "66": (lambda n: len(n) == 9 and n[0] in "689", (8, 9)),
     "258": (lambda n: len(n) == 9 and n[:2] in ("82", "83", "84", "85", "86", "87"), (8, 9)),
     "264": (lambda n: len(n) == 9 and n[:2] in ("81", "83", "84", "85"), (8, 9)),
+    "856": (lambda n: len(n) == 10 and n[:2] == "20", (8, 9, 10)),  # Laos: celulares 20 XXXX XXXX
 }
 
 T = {
