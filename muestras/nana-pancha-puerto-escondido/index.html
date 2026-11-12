@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#f1eadc">
-  <meta name="description" content="Un espacio de cocina en Cuenca donde la chef Catalina Abad Rodas trabaja con recetas tradicionales e ingredientes locales.">
-  <title>Warmikuna Cocina Taller · Cuenca, Ecuador</title>
+  <meta name="theme-color" content="#eee8d5">
+  <meta name="description" content="Una mesa en Rinconada para disfrutar de cocina mexicana y oaxaqueña, con cervezas artesanales.">
+  <title>Nana Pancha Puerto Escondido · Puerto Escondido, Oaxaca</title>
   <style>
-    :root{--paper:#f1eadc;--ink:#342b1c;--accent:#7d5030;--panel:#e5d5b8}
+    :root{--paper:#eee8d5;--ink:#322a1d;--accent:#745039;--panel:#e5d7b8}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{margin:0;color:var(--ink);background:var(--paper);font:17px/1.55 "Instrument Sans",system-ui,sans-serif}
@@ -31,6 +31,9 @@
     .copy{display:grid;gap:1rem;justify-items:start}
     .copy p:not(.place){max-width:39ch}
     figure img{display:block;width:100%;aspect-ratio:1.28;object-fit:cover;border-radius:.3rem}
+    .feature{background:var(--accent);color:white;border-radius:.35rem;min-height:clamp(13rem,32vw,27rem);display:grid;align-items:end;padding:clamp(1.5rem,5vw,3rem)}
+    .feature .place{color:white}
+    .feature-title{font:400 clamp(2.75rem,6.5vw,5rem)/1.03 "Instrument Serif",Georgia,serif;letter-spacing:-.045em;margin-top:.8rem;max-width:12ch}
     figcaption{margin-top:.45rem;font-size:.81rem}
     .button{display:inline-flex;padding:.78rem 1.15rem;border-radius:100px;background:var(--accent);color:white;text-decoration:none;font-weight:740}
     .button:hover{filter:brightness(.86)}
@@ -57,21 +60,23 @@
   <div class="preview">Muestra de diseño preparada por Leonardo Apollonio</div>
   <header class="wrap">
     <nav aria-label="Navegación principal">
-      <a href="./">Warmikuna Cocina Taller</a>
+      <a href="./">Nana Pancha Puerto Escondido</a>
       <a href="#actividades">Ver actividades</a>
     </nav>
   </header>
   <main>
-    <section class="hero wrap reverse" aria-labelledby="titulo">
+    <section class="hero wrap forward" aria-labelledby="titulo">
       <div class="copy">
-        <p class="place">Cuenca, Ecuador</p>
-        <h1 id="titulo">Cocina cuencana con Catalina</h1>
-        <p>Un espacio de cocina en Cuenca donde la chef Catalina Abad Rodas trabaja con recetas tradicionales e ingredientes locales.</p>
+        <p class="place">Puerto Escondido, Oaxaca</p>
+        <h1 id="titulo">Cocina oaxaqueña en Puerto Escondido</h1>
+        <p>Una mesa en Rinconada para disfrutar de cocina mexicana y oaxaqueña, con cervezas artesanales.</p>
         <a class="button" href="#consultas">Consultas y reservas</a>
       </div>
-      <figure>
-        <img src="foto.webp" alt="Vista del centro histórico de Cuenca, Ecuador">
-        <figcaption>Centro histórico de Cuenca</figcaption>
+      <figure class="feature">
+        <div>
+          <p class="place">Puerto Escondido, Oaxaca</p>
+          <p class="feature-title">Cocina y cerveza artesanal</p>
+        </div>
       </figure>
     </section>
     <section id="actividades" class="activities" aria-labelledby="actividades-titulo">
@@ -79,12 +84,12 @@
         <h2 id="actividades-titulo">Actividades</h2>
         <div class="cards">
           <article>
-            <h3>La mesa cuencana</h3>
-            <p>Consulta por las preparaciones disponibles y los ingredientes de temporada.</p>
+            <h3>La cocina de Nana Pancha</h3>
+            <p>Consulta por los platillos de la casa y las opciones disponibles el día de tu visita.</p>
           </article>
           <article>
-            <h3>Cocina taller</h3>
-            <p>Pregunta por las clases y experiencias para conocer la cocina ecuatoriana.</p>
+            <h3>Cervezas artesanales</h3>
+            <p>Pregunta al equipo qué cervezas están sirviendo y cómo reservar una mesa.</p>
           </article>
         </div>
       </div>
@@ -94,12 +99,11 @@
         <h2 id="contacto-titulo">Consultas y reservas</h2>
         <p>Consultá por disponibilidad y detalles.</p>
       </div>
-      <a class="button" href="mailto:warmikunacocinataller@gmail.com">Escribir por correo</a>
+      <a class="button" href="mailto:mallelyvega27@gmail.com">Escribir por correo</a>
     </section>
   </main>
   <footer class="wrap">
     <p>Muestra de sitio por <a href="https://web.leonardoapollonio.com">Leonardo Apollonio</a>.</p>
-    <p>Foto de <a href="https://commons.wikimedia.org/wiki/File:Vista_panor%C3%A1mica_del_Centro_Hist%C3%B3rico_de_Cuenca.jpg">Martín Vasco</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Ajuste de tamaño y recorte visual.</p>
   </footer>
 </body>
 </html>
