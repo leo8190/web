@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f4eade">
+  <meta name="description" content="Una propuesta de sitio para los recorridos a pie de Cafayate Walking Tours.">
+  <title>Cafayate Walking Tours · Cafayate a pie con Jairo</title>
+  <style>
+    :root{color-scheme:light;--paper:#f4eade;--ink:#35251e;--rust:#923b2b;--line:#cfbca7;--deep:#432e26}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 "DM Sans",system-ui,sans-serif}
+    h1,h2,h3,p,figure{margin:0}
+    a{color:inherit;text-underline-offset:.21em}
+    a:focus-visible{outline:3px solid #aa4f32;outline-offset:5px}
+    .preview{padding:.45rem 1rem;background:var(--deep);color:#f8eee4;text-align:center;font-size:.79rem}
+    .wrap{width:min(1140px,calc(100% - 3.5rem));margin:auto}
+    nav{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+    nav a:first-child{font-weight:750;text-decoration:none;letter-spacing:-.03em}
+    nav a:last-child{font-size:.88rem}
+    .hero{display:grid;grid-template-columns:1fr .85fr;gap:clamp(1.4rem,5vw,4.4rem);align-items:center;padding:2.65rem 0 3.65rem}
+    .hero-copy{display:grid;gap:1.05rem;justify-items:start}
+    .tag{color:var(--rust);font-size:.76rem;font-weight:750;letter-spacing:.15em;text-transform:uppercase}
+    h1,h2,h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.052em;line-height:1.04}
+    h1{font-size:clamp(3.25rem,7.7vw,6.7rem);max-width:10ch}
+    h2{font-size:clamp(2.5rem,5.9vw,4.6rem)}
+    h3{font-size:clamp(1.65rem,3vw,2.5rem)}
+    .hero-copy p:not(.tag){max-width:40ch}
+    .button{display:inline-flex;padding:.8rem 1.2rem;border-radius:.2rem;background:var(--rust);color:#fff6e8;text-decoration:none;font-weight:730}
+    .button:hover{background:#702b20}
+    figure{display:grid;gap:.52rem}
+    figure img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:.2rem;display:block}
+    figcaption{font-size:.8rem;color:#5e463a}
+    .route{background:#eadbc9;padding:clamp(2.8rem,6vw,5.5rem) 0}
+    .route .wrap{display:grid;grid-template-columns:.82fr 1.18fr;gap:1.9rem 3.6rem}
+    .route h2{margin-top:.45rem}
+    .stops{display:grid;gap:1.05rem}
+    article{display:grid;gap:.3rem;padding-bottom:1rem;border-bottom:1px solid var(--line)}
+    .book{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:3.2rem 0}
+    .book h2{margin-bottom:.5rem}
+    .book .button{flex-shrink:0}
+    footer{padding:1.2rem 0 1.65rem;border-top:1px solid var(--line);font-size:.82rem}
+    footer p+p{margin-top:.45rem}
+    @media(max-width:740px){
+      .wrap{width:calc(100% - 2rem)}
+      .hero,.route .wrap{grid-template-columns:1fr}
+      .hero{padding:1.75rem 0 2.45rem}
+      figure img{aspect-ratio:1.22}
+      .book{align-items:flex-start;flex-direction:column}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <div class="preview">Muestra de diseño preparada por Leonardo Apollonio</div>
+  <header class="wrap">
+    <nav aria-label="Navegación principal">
+      <a href="./">Cafayate Walking Tours</a>
+      <a href="#recorrido">El recorrido</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero wrap" aria-labelledby="titulo">
+      <div class="hero-copy">
+        <p class="tag">Valles Calchaquíes · Salta</p>
+        <h1 id="titulo">Cafayate, a pie con Jairo</h1>
+        <p>Una caminata guiada para conocer las historias, la arquitectura y las tradiciones del centro de Cafayate.</p>
+        <a class="button" href="#reservas">Consultar por el recorrido</a>
+      </div>
+      <figure>
+        <img src="catedral.webp" width="1200" height="1200" alt="Fachada de la Catedral de Nuestra Señora del Rosario en Cafayate">
+        <figcaption>Catedral de Nuestra Señora del Rosario, Cafayate</figcaption>
+      </figure>
+    </section>
+    <section class="route" id="recorrido" aria-labelledby="salida">
+      <div class="wrap">
+        <div>
+          <p class="tag">Paseo guiado</p>
+          <h2 id="salida">Del centro a sus historias</h2>
+        </div>
+        <div class="stops">
+          <article>
+            <h3>Plaza 20 de Febrero</h3>
+            <p>El punto de encuentro para empezar la caminata por el casco céntrico.</p>
+          </article>
+          <article>
+            <h3>Arquitectura y cultura local</h3>
+            <p>Jairo cuenta la historia de Cafayate a partir de sus edificios y las costumbres de la ciudad.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="book wrap" id="reservas" aria-labelledby="coordinar">
+      <div>
+        <h2 id="coordinar">Organizá tu visita</h2>
+        <p>Consultá fechas y detalles del paseo en la ficha de reservas.</p>
+      </div>
+      <a class="button" href="https://www.civitatis.com/es/cafayate/free-tour-cafayate/">Ver fechas en Civitatis</a>
+    </section>
+  </main>
+  <footer class="wrap">
+    <p>Muestra de sitio por <a href="https://web.leonardoapollonio.com">Leonardo Apollonio</a>.</p>
+    <p>Foto de <a href="https://commons.wikimedia.org/wiki/File:Catedral_de_Nuestra_Se%C3%B1ora_del_Rosario,_Cafayate_01.jpg">Bernard Gagnon</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Ajuste de tamaño y recorte visual.</p>
+  </footer>
+</body>
+</html>
