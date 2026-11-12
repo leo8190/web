@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#e9eee0">
+  <meta name="description" content="El restaurante del chef Julio en La Cruz de Huanacaxtle, Bahía de Banderas.">
+  <title>Masala Bar &amp; Grill · La Cruz de Huanacaxtle, Nayarit</title>
+  <style>
+    :root{--paper:#e9eee0;--ink:#24362e;--accent:#3e6557;--panel:#d4e4d3}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:var(--paper);font:17px/1.55 "Instrument Sans",system-ui,sans-serif}
+    h1,h2,h3,p,figure{margin:0}
+    a{color:inherit;text-underline-offset:.22em}
+    a:focus-visible{outline:3px solid currentColor;outline-offset:5px}
+    .wrap{width:min(1150px,calc(100% - 3rem));margin:auto}
+    .preview{background:var(--panel);padding:.45rem 1rem;text-align:center;font-size:.81rem}
+    nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.18rem 0;border-bottom:1px solid #1629233d}
+    nav a:first-child{text-decoration:none;font-weight:760;letter-spacing:-.02em}
+    nav a:last-child{font-size:.86rem;flex-shrink:0}
+    h1,h2,h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1.02;letter-spacing:-.05em}
+    h1{font-size:clamp(3.3rem,7.5vw,6.4rem);max-width:13ch}
+    h2{font-size:clamp(2.7rem,5.4vw,4.7rem)}
+    h3{font-size:clamp(1.9rem,3.6vw,2.7rem)}
+    .place{color:var(--accent);text-transform:uppercase;letter-spacing:.13em;font-size:.76rem;font-weight:750}
+    .hero{display:grid;grid-template-columns:.93fr 1.07fr;gap:clamp(1.4rem,5vw,4.1rem);align-items:center;padding:2rem 0 3.25rem}
+    .reverse{grid-template-columns:1.07fr .93fr}
+    .reverse figure{grid-column:1;grid-row:1}
+    .copy{display:grid;gap:1rem;justify-items:start}
+    .copy p:not(.place){max-width:39ch}
+    figure img{display:block;width:100%;aspect-ratio:1.28;object-fit:cover;border-radius:.3rem}
+    .feature{background:var(--accent);color:white;border-radius:.35rem;min-height:clamp(13rem,32vw,27rem);display:grid;align-items:end;padding:clamp(1.5rem,5vw,3rem)}
+    .feature .place{color:white}
+    .feature-title{font:400 clamp(2.75rem,6.5vw,5rem)/1.03 "Instrument Serif",Georgia,serif;letter-spacing:-.045em;margin-top:.8rem;max-width:12ch}
+    figcaption{margin-top:.45rem;font-size:.81rem}
+    .button{display:inline-flex;padding:.78rem 1.15rem;border-radius:100px;background:var(--accent);color:white;text-decoration:none;font-weight:740}
+    .button:hover{filter:brightness(.86)}
+    .activities{background:var(--panel);padding:clamp(2.7rem,6vw,5.5rem) 0}
+    .cards{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:1.4rem}
+    article{background:var(--paper);padding:1.45rem;display:grid;gap:.5rem;align-content:start;border-radius:.3rem}
+    article p{max-width:42ch}
+    .contact{padding:3.15rem 0;display:flex;justify-content:space-between;align-items:center;gap:1.35rem}
+    .contact h2{margin-bottom:.52rem}
+    .contact .button{flex-shrink:0}
+    footer{border-top:1px solid #1629233d;padding:1.2rem 0 1.6rem;font-size:.8rem}
+    footer p+p{margin-top:.4rem}
+    @media(max-width:720px){
+      .wrap{width:calc(100% - 2rem)}
+      .hero,.reverse,.cards{grid-template-columns:1fr}
+      .hero{padding:1.5rem 0 2.1rem}
+      .reverse figure{grid-row:auto}
+      .contact{flex-direction:column;align-items:flex-start}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <div class="preview">Muestra de diseño preparada por Leonardo Apollonio</div>
+  <header class="wrap">
+    <nav aria-label="Navegación principal">
+      <a href="./">Masala Bar &amp; Grill</a>
+      <a href="#actividades">Ver actividades</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero wrap reverse" aria-labelledby="titulo">
+      <div class="copy">
+        <p class="place">La Cruz de Huanacaxtle, Nayarit</p>
+        <h1 id="titulo">La mesa de Julio en La Cruz</h1>
+        <p>El restaurante del chef Julio en La Cruz de Huanacaxtle, Bahía de Banderas.</p>
+        <a class="button" href="#consultas">Consultas y reservas</a>
+      </div>
+      <figure class="feature">
+        <div>
+          <p class="place">La Cruz de Huanacaxtle, Nayarit</p>
+          <p class="feature-title">Masala Bar &amp; Grill</p>
+        </div>
+      </figure>
+    </section>
+    <section id="actividades" class="activities" aria-labelledby="actividades-titulo">
+      <div class="wrap">
+        <h2 id="actividades-titulo">Actividades</h2>
+        <div class="cards">
+          <article>
+            <h3>La propuesta del chef</h3>
+            <p>Consulta las preparaciones y las especialidades disponibles en Masala.</p>
+          </article>
+          <article>
+            <h3>Una visita a La Cruz</h3>
+            <p>Escribe al equipo para confirmar horarios y reservar una mesa.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="consultas" class="contact wrap" aria-labelledby="contacto-titulo">
+      <div>
+        <h2 id="contacto-titulo">Consultas y reservas</h2>
+        <p>Consultá por disponibilidad y detalles.</p>
+      </div>
+      <a class="button" href="mailto:masalalacruz.restaurant@gmail.com">Escribir por correo</a>
+    </section>
+  </main>
+  <footer class="wrap">
+    <p>Muestra de sitio por <a href="https://web.leonardoapollonio.com">Leonardo Apollonio</a>.</p>
+  </footer>
+</body>
+</html>
