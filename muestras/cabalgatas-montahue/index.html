@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f5efe1">
+  <meta name="description" content="Muestra de sitio para Cabalgatas Montahue. Cabalgatas guiadas por senderos y bosques de Villa La Angostura.">
+  <title>Cabalgatas Montahue · Villa La Angostura, Neuquén</title>
+  <style>
+    :root{--paper:#f5efe1;--ink:#2e3020;--accent:#5b542d;--panel:#e8dec3}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.58 "Instrument Sans",system-ui,sans-serif}
+    h1,h2,h3,p,figure{margin:0}
+    a{color:inherit;text-underline-offset:.2em}
+    a:focus-visible{outline:3px solid currentColor;outline-offset:5px}
+    .wrap{width:min(1150px,calc(100% - 3rem));margin:auto}
+    .preview{background:var(--panel);padding:.44rem 1rem;text-align:center;font-size:.79rem}
+    nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.15rem 0;border-bottom:1px solid #142b2835}
+    nav a:first-child{text-decoration:none;font-weight:780;letter-spacing:-.02em}
+    nav a:last-child{font-size:.86rem}
+    h1,h2,h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1.02;letter-spacing:-.05em}
+    h1{font-size:clamp(3.1rem,7vw,6.6rem);max-width:12ch}
+    h2{font-size:clamp(2.55rem,5vw,4.7rem)}
+    h3{font-size:clamp(1.9rem,3.4vw,2.75rem)}
+    .place{text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;font-weight:740}
+    .hero{padding:2rem 0 3.6rem;display:grid;gap:2.25rem;align-items:center}
+    .lagoon .hero{grid-template-columns:.88fr 1.12fr}
+    .mountain .hero{grid-template-columns:1.05fr .95fr}
+    .mountain .hero figure{grid-column:1;grid-row:1}
+    .hero-copy{display:grid;gap:1.05rem;justify-items:start}
+    .hero-copy p:not(.place){max-width:36ch}
+    figure img{width:100%;height:auto;aspect-ratio:1.32;object-fit:cover;display:block;border-radius:.18rem}
+    figcaption{font-size:.78rem;margin-top:.45rem}
+    .button{display:inline-flex;padding:.78rem 1.15rem;background:var(--accent);color:white;border-radius:.25rem;text-decoration:none;font-weight:700}
+    .button:hover{filter:brightness(.86)}
+    .activities{background:var(--panel);padding:clamp(2.7rem,6vw,5.2rem) 0}
+    .cards{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:1.45rem}
+    article{background:var(--paper);border-radius:.35rem;padding:1.25rem;display:grid;align-content:start;gap:.5rem}
+    article p{max-width:38ch}
+    .contact{display:flex;justify-content:space-between;align-items:center;gap:1.25rem;padding:3rem 0}
+    .contact h2{margin-bottom:.5rem}
+    .contact .button{flex-shrink:0}
+    footer{border-top:1px solid #142b2835;font-size:.8rem;padding:1.2rem 0 1.5rem}
+    footer p+p{margin-top:.48rem}
+    @media(max-width:740px){
+      .wrap{width:calc(100% - 2rem)}
+      .lagoon .hero,.mountain .hero,.cards{grid-template-columns:1fr}
+      .hero{gap:1.35rem;padding:1.5rem 0 2.1rem}
+      .mountain .hero figure{grid-row:auto}
+      .contact{flex-direction:column;align-items:flex-start}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body class="mountain">
+  <div class="preview">Muestra de diseño preparada por Leonardo Apollonio</div>
+  <header class="wrap">
+    <nav aria-label="Navegación principal">
+      <a href="./">Cabalgatas Montahue</a>
+      <a href="#salidas">Ver salidas</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero wrap" aria-labelledby="titulo">
+      <div class="hero-copy">
+        <p class="place">Villa La Angostura, Neuquén</p>
+        <h1 id="titulo">La Patagonia, a caballo</h1>
+        <p>Cabalgatas guiadas por senderos y bosques de Villa La Angostura.</p>
+        <a class="button" href="#consultas">Consultar por una salida</a>
+      </div>
+      <figure>
+        <img src="angostura.webp" width="1280" height="960" alt="Bahía Mansa y las montañas de Villa La Angostura">
+        <figcaption>Bahía Mansa, Villa La Angostura</figcaption>
+      </figure>
+    </section>
+    <section class="activities" id="salidas" aria-labelledby="actividades">
+      <div class="wrap">
+        <h2 id="actividades">Senderos de la Angostura</h2>
+        <div class="cards">
+          <article>
+            <h3>Bosque y montaña</h3>
+            <p>Recorridos a caballo entre árboles y miradores de la zona.</p>
+          </article>
+          <article>
+            <h3>La pulpería</h3>
+            <p>Consultá por las opciones que incluyen una parada en la pulpería.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="contact wrap" id="consultas" aria-labelledby="coordinar">
+      <div>
+        <h2 id="coordinar">Coordiná tu cabalgata</h2>
+        <p>Preguntá por la duración, la disponibilidad y el punto de encuentro.</p>
+      </div>
+      <a class="button" href="mailto:cabalgatasmontahue@yahoo.com.ar">Consultar por correo</a>
+    </section>
+  </main>
+  <footer class="wrap">
+    <p>Muestra de sitio por <a href="https://web.leonardoapollonio.com">Leonardo Apollonio</a>.</p>
+    <p>Foto de <a href="https://commons.wikimedia.org/wiki/File:Villa_La_Angostura.jpg">gbelzunce_floyd</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Ajuste de tamaño y recorte visual.</p>
+  </footer>
+</body>
+</html>
